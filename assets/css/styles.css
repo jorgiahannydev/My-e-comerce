@@ -1,0 +1,330 @@
+/* Reset y estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background: #f8f4f6;
+    margin: 0;
+}
+
+.container-fluid {
+    padding: 0;
+}
+
+/* Header */
+.header {
+    grid-area: header;
+    background: #e7b8b6;
+    color: #7a4c4a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+    font-weight: 700;
+    height: 56px;
+    letter-spacing: 0.5px;
+    border-radius: 0 0 16px 16px;
+    box-shadow: none;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+/* Main Layout - CSS Grid con grid-template-areas */
+.layout {
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "sidebar main";
+    grid-template-columns: 220px 1fr;
+    grid-template-rows: 56px 1fr;
+    min-height: 100vh;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Sidebar - Flexbox para distribución vertical */
+.sidebar {
+    grid-area: sidebar;
+    background: #fbeaec;
+    padding: 28px 18px 0 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 16px 0 0 16px;
+    min-width: 180px;
+    box-sizing: border-box;
+}
+
+.sidebar-title {
+    font-weight: 700;
+    margin-bottom: 14px;
+    color: #a06c74;
+    font-size: 1.08rem;
+}
+
+.category-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 1rem;
+    color: #a06c74;
+    width: 100%;
+}
+
+.category-list li {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    font-weight: 400;
+    gap: 6px;
+}
+
+.category-list span {
+    color: #c89fa5;
+    font-size: 0.95em;
+    margin-left: 4px;
+}
+
+/* Main Content */
+.main-content {
+    grid-area: main;
+    padding: 32px 32px 32px 32px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    border-radius: 0 16px 16px 0;
+    min-height: 500px;
+    box-sizing: border-box;
+}
+
+.content-header {
+    margin-bottom: 30px;
+}
+
+.content-header h2 {
+    color: #343a40;
+    margin-bottom: 5px;
+}
+
+/* Products Grid - CSS Grid para la grilla de productos */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 28px 24px;
+}
+
+.products-grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* Product Cards - Flexbox para construcción de tarjetas */
+.product-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(200, 159, 165, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 18px 12px 18px 12px;
+    border: 1.5px solid #f3d3d7;
+    transition: box-shadow 0.2s;
+}
+
+.product-card img {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    background: #fff6fa;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    display: block;
+}
+
+.product-title {
+    font-weight: 700;
+    margin-bottom: 8px;
+    text-align: center;
+    color: #a06c74;
+    font-size: 1.08rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
+.product-price {
+    color: #7a4c4a;
+    margin-bottom: 10px;
+    font-size: 1.05rem;
+    text-align: center;
+    font-weight: 500;
+}
+
+.product-card .btn {
+    background: #e7b8b6;
+    color: #7a4c4a;
+    border: none;
+    border-radius: 0;
+    padding: 8px 0;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+    letter-spacing: 0.5px;
+}
+
+.product-card .btn:hover {
+    background: #d49ca0;
+    color: #fff;
+}
+
+/* Footer */
+.footer {
+    background: #e7b8b6;
+    color: #7a4c4a;
+    font-size: 1rem;
+    border-radius: 16px 16px 0 0;
+    margin-top: 32px;
+    box-shadow: none;
+}
+
+.footer-text {
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.footer h6 {
+    color: #ffffff;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.footer ul li {
+    margin-bottom: 8px;
+}
+
+.footer a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: #007bff !important;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .layout {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "main";
+        padding: 0;
+    }
+    .sidebar {
+        display: none;
+    }
+    .main-content {
+        border-radius: 0 0 16px 16px;
+        padding: 24px 8px;
+    }
+    .footer {
+        border-radius: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .product-card {
+        margin-bottom: 15px;
+    }
+    
+    .footer {
+        padding: 30px 0 15px;
+    }
+    
+    .footer .col-md-4 {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .products-grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .products-grid-3 {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Animaciones adicionales */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.product-card {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Estilos para botones */
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Estilos para badges */
+.badge {
+    font-size: 0.7rem;
+}
+
+/* Estilos para navbar */
+.navbar-nav .nav-link {
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #007bff !important;
+}
+
+/* Estilos para el contenedor principal */
+.container-fluid {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Asegurar que el contenido principal ocupe el espacio disponible */
+.layout {
+    flex: 1;
+} 
